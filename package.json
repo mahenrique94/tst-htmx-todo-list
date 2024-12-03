@@ -1,0 +1,21 @@
+{
+  "name": "tst-todo-list",
+  "main": "./src/index.ts",
+  "scripts": {
+    "start": "tsx ./src/index.ts",
+    "start:dev": "tsx --watch ./src/index.ts"
+  },
+  "author": "Matheus Castiglioni",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/autoload": "^6.0.2",
+    "@fastify/formbody": "^8.0.1",
+    "@sinclair/typebox": "^0.34.9",
+    "fastify": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "tsx": "^4.19.2"
+  },
+  "type": "module"
+}

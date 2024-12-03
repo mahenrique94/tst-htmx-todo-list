@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+      rel="stylesheet"
+    />
+    <script async defer src="https://unpkg.com/htmx.org@2.0.3"></script>
+  </head>
+  <body>
+    <main class="container">
+      <form
+        autocomplete="off"
+        hx-post="/api/tasks"
+        hx-swap="beforeend"
+        hx-target="#tasks"
+        hx-on::after-request="this.task.value = ''; window.noTasks && window.noTasks.parentElement.removeChild(noTasks);"
+      >
+        <h1>HTMX - Todo List</h1>
+        <input maxlength="80" name="task" required type="text" />
+        <button type="submit">Add</button>
+      </form>
+      <ul id="tasks">
+        <slot />
+      </ul>
+    </main>
+  </body>
+</html>
